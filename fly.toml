@@ -4,12 +4,13 @@
 #
 
 app = ''               # change this before deploying!
-primary_region = 'ord'
+primary_region = 'iad'
 
 [env]
 DEFAULT_MODEL = 'llama3.1:8b'
 OLLAMA_BASE_URL = 'http://localhost:11434'
 OLLAMA_MODELS = '/app/backend/data/models'
+ENABLE_SIGNUP = "false"
 
 [[mounts]]
 source = 'data'
@@ -27,4 +28,4 @@ processes = ['app']
 [[vm]]
 size = "performance-8x"
 memory = "16gb"
-gpu_kind = "l40s"
+gpu_kind = "a100-80gb"
